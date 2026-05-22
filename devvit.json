@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "mod-shieldd",
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Mop comments",
+        "description": "Remove this comment and all child comments. This might take a few seconds to run.",
+        "location": "comment",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/mop-comment"
+      },
+      {
+        "label": "Mop post comments",
+        "description": "Remove all comments of this post. This might take a few seconds to run.",
+        "location": "post",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/mop-post"
+      },
+      {
+        "label": "🛡️ ModShield Settings",
+        "description": "Configure ModShield settings",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/settings"
+      },
+      {
+        "label": "🛡️ ModShield Activity Log",
+        "description": "View recent ModShield alerts",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/view-activity-log"
+      },
+      {
+        "label": "🛡️ ModShield: Quick Unban",
+        "description": "Quickly unban a user programmatically",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/quick-unban"
+      },
+      {
+        "label": "🛡️ ModShield: Mock Network Ban",
+        "description": "Log a test ban in the database without actually banning the user on Reddit",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/mock-network-ban"
+      }
+    ]
+  },
+  "forms": {
+    "mopComment": "/internal/form/mop-comment-submit",
+    "mopPost": "/internal/form/mop-post-submit",
+    "settingsForm": "/internal/form/settings-form-submit",
+    "quickUnbanForm": "/internal/form/quick-unban-submit",
+    "mockNetworkBanForm": "/internal/form/mock-network-ban-submit"
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/on-app-install",
+    "onModAction": "/internal/triggers/on-mod-action",
+    "onPostSubmit": "/internal/triggers/on-post-submit",
+    "onCommentSubmit": "/internal/triggers/on-comment-submit"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "permissions": {
+    "redis": true,
+    "reddit": {
+      "enable": true,
+      "scope": "moderator"
+    }
+  },
+  "dev": {
+    "subreddit": "mod_shieldd_dev"
+  }
+}
