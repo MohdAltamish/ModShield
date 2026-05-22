@@ -1,6 +1,6 @@
 {
   "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
-  "name": "mod-shieldd",
+  "name": "modshield-bot",
   "server": {
     "dir": "dist/server",
     "entry": "index.cjs"
@@ -76,6 +76,6 @@
     }
   },
   "dev": {
-    "subreddit": "mod_shieldd_dev"
+    "subreddit": "modshield_bot"
   }
 }

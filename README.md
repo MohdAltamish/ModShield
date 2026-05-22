@@ -5,11 +5,14 @@
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
 [![Built with Devvit](https://img.shields.io/badge/Built%20with-Devvit-orange)](https://developers.reddit.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Version](https://img.shields.io/badge/version-0.0.4-brightgreen)](https://developers.reddit.com/apps/modshield-bot)
+[![Test Community](https://img.shields.io/badge/Test%20Community-r%2Fmodshield__bot-FF4500?logo=reddit)](https://www.reddit.com/r/modshield_bot)
 
 ---
 
 ## 📖 Table of Contents
 
+- [Live App & Test Community](#-live-app--test-community)
 - [What is ModShield?](#-what-is-modshield)
 - [The Problem It Solves](#-the-problem-it-solves)
 - [How It Works — Plain English](#-how-it-works--plain-english)
@@ -24,6 +27,24 @@
 - [Commands Reference](#-commands-reference)
 - [Privacy](#-privacy)
 - [Contributing](#-contributing)
+
+---
+
+## 🚀 Live App & Test Community
+
+ModShield is **live and deployed** on Reddit. You can explore it right now:
+
+| | Link |
+|---|---|
+| 🛍️ **App Directory** | [developers.reddit.com/apps/modshield-bot](https://developers.reddit.com/apps/modshield-bot) |
+| 🧪 **Test Community** | [r/modshield_bot](https://www.reddit.com/r/modshield_bot) |
+| 📦 **Current Version** | `0.0.4` |
+
+### Try it out
+
+1. Join [r/modshield_bot](https://www.reddit.com/r/modshield_bot) — the official test subreddit
+2. If you're a moderator, open the community menu (⋯) to see all 🛡️ ModShield tools
+3. Create a test post or comment to trigger the network detection system
 
 ---
 
@@ -233,19 +254,24 @@ Most existing Devvit apps are UI/flair/post-formatting tools. **ModShield is one
 
 - Node.js v22.2.0 or higher
 - A Reddit account with moderator access to at least one subreddit
-- The Devvit CLI
+- The Devvit CLI (`npx` is sufficient — no global install required)
 
-### 1. Install the Devvit CLI
+### 1. Install the Devvit CLI (optional — global install)
 
 ```bash
 npm install -g devvit
 ```
 
+Or use it directly with `npx` (no install needed):
+
+```bash
+npx devvit --version
+```
+
 ### 2. Log in to Reddit via Devvit
 
 ```bash
-npm run login
-# or: devvit login
+npx devvit login
 ```
 
 This opens a browser window to authenticate your Reddit account.
@@ -253,7 +279,7 @@ This opens a browser window to authenticate your Reddit account.
 ### 3. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/mod-shield.git
+git clone https://github.com/MohdAltamish/mod-shield.git
 cd mod-shield
 ```
 
@@ -269,17 +295,21 @@ Open `devvit.json` and update the dev subreddit name to a subreddit you moderate
 
 ```json
 "dev": {
-  "subreddit": "your_subreddit_name"
+  "subreddit": "modshield_bot"
 }
 ```
+
+> The official test community is [r/modshield_bot](https://www.reddit.com/r/modshield_bot). Replace this with your own subreddit if you're running a private fork.
 
 ### 6. Start development mode
 
 ```bash
 npm run dev
+# or directly:
+npx devvit playtest r/modshield_bot
 ```
 
-This runs the Devvit playtest, which hot-deploys your app to your dev subreddit so you can test it live on Reddit.
+This runs the Devvit playtest, which hot-deploys your app to your dev subreddit and streams live server logs to your terminal so you can debug in real time.
 
 ### 7. Open Reddit and test
 
@@ -495,6 +525,15 @@ A user with 3 regular flags and 2 trusted flags has an effective score of **5** 
 | `npm run deploy` | Type-check + lint + upload a new version to Reddit |
 | `npm run launch` | Deploy + submit for Reddit's public app review |
 | `npm run login` | Authenticate your CLI with your Reddit account |
+
+### Direct CLI commands (via `npx`)
+
+| Command | What it does |
+|---------|-------------|
+| `npx devvit upload` | Build and upload a new version |
+| `npx devvit install r/modshield_bot` | Install the uploaded version to the subreddit |
+| `npx devvit playtest r/modshield_bot` | Start live playtest with streamed logs |
+| `npx devvit login` | Authenticate with your Reddit account |
 
 ---
 
