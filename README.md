@@ -5,7 +5,8 @@
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](LICENSE)
 [![Built with Devvit](https://img.shields.io/badge/Built%20with-Devvit-orange)](https://developers.reddit.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Version](https://img.shields.io/badge/version-0.0.4-brightgreen)](https://developers.reddit.com/apps/modshield-bot)
+[![Version](https://img.shields.io/badge/version-0.0.9-brightgreen)](https://developers.reddit.com/apps/modshield-bot)
+[![Status](https://img.shields.io/badge/Status-Public-success)](https://developers.reddit.com/apps/modshield-bot)
 [![Test Community](https://img.shields.io/badge/Test%20Community-r%2Fmodshield__bot-FF4500?logo=reddit)](https://www.reddit.com/r/modshield_bot)
 
 ---
@@ -32,13 +33,14 @@
 
 ## 🚀 Live App & Test Community
 
-ModShield is **live and deployed** on Reddit. You can explore it right now:
+ModShield is **live, deployed, and publicly available** on Reddit. You can explore it right now:
 
 | | Link |
 |---|---|
 | 🛍️ **App Directory** | [developers.reddit.com/apps/modshield-bot](https://developers.reddit.com/apps/modshield-bot) |
 | 🧪 **Test Community** | [r/modshield_bot](https://www.reddit.com/r/modshield_bot) |
-| 📦 **Current Version** | `0.0.4` |
+| 📦 **Current Version** | `0.0.9` |
+| 🌐 **Visibility** | **Public** — available to all Reddit moderators |
 
 ### Try it out
 

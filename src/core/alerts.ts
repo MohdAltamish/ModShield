@@ -45,14 +45,14 @@ export async function sendModmailAlert(
     autoAction,
     ``,
     `---`,
-    `*To ban this user: [click here](https://www.reddit.com/r/${subredditName}/about/banned) and add u/${username}*`,
+    `*To ban this user: [click here](https://www.reddit.com/r/${subredditName}/about/banned)*`,
     `*ModShield v1.0 | Protecting r/${subredditName}*`,
   ].join('\n');
 
-  await reddit.sendPrivateMessageAsSubreddit({
-    fromSubredditName: subredditName,
-    to: `r/${subredditName}`,
-    subject,
-    text: body,
+  await reddit.modMail.createConversation({
+    subredditName: subredditName,
+    subject: subject,
+    body: body,
+    isAuthorHidden: false,
   });
 }
