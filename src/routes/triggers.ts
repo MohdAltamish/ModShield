@@ -16,7 +16,10 @@ export const triggers = new Hono();
 
 triggers.post('/on-app-install', async (c) => {
   const input = await c.req.json<OnAppInstallRequest>();
-  console.log('App installed to subreddit: r/' + input.subreddit?.name);
+  const subName = input.subreddit?.name ?? 'unknown';
+
+  console.log(`[ModShield] 🛡️ App installed to r/${subName} — welcome to the network!`);
+  console.log(`[ModShield] Default config applied. Moderators can customize via the subreddit menu.`);
 
   return c.json<TriggerResponse>(
     {
