@@ -45,7 +45,7 @@ const buildNukeForm = (title: string, targetId: string) => ({
 
 menu.post('/mop-comment', async (c) => {
   const request = await c.req.json<MenuItemRequest>();
-  console.log('request', request.targetId);
+  console.log(`[ModShield] Mop comment requested for target: ${request.targetId}`);
   return c.json<UiResponse>(
     {
       showForm: {
