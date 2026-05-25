@@ -2,6 +2,10 @@ import { SubConfig } from './types';
 
 /**
  * Check if a subreddit is in this installation's trusted list.
+ *
+ * @param config - The current subreddit's ModShield configuration
+ * @param subredditName - The subreddit name to check against the trusted list
+ * @returns `true` if the subreddit is trusted by this installation
  */
 export function isTrusted(config: SubConfig, subredditName: string): boolean {
   return config.trustedSubs
