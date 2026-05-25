@@ -46,7 +46,7 @@ export async function sendModmailAlert(
     ``,
     `---`,
     `*To ban this user: [click here](https://www.reddit.com/r/${subredditName}/about/banned)*`,
-    `*ModShield v1.0 | Protecting r/${subredditName}*`,
+    `*ModShield v0.0.9 | Protecting r/${subredditName}*`,
   ].join('\n');
 
   await reddit.modMail.createConversation({
